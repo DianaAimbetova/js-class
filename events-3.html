@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width : 50px;
+            height: 5000px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1> Capturing Scroll Events!!!</h1>
+    <div>
+
+    </div>
+    <script>
+        var heading = document.querySelector("h1");
+        var box = document.querySelector("div");
+        var pagetop;
+
+        window.addEventListener('scroll', function(event){
+            pagetop = window.pageYOffset;
+            console.log(pagetop);
+        });
+    </script>
+    <script>
+        window.addEventListener('resize', function(){
+            console.log(`Window width is ${window.innerWidth}`);
+            console.log(`Window height is ${window.innerHeight}`);
+        })
+    </script>
+    <script>
+        document.addEventListener('keydown', function(event){
+                alert(`A key ${event.key} was pressed!`);
+        });
+    </script>
+    <script>
+        "use strict";
+        (function log(){
+        a = 5;
+        var b = 10;
+        console.log(`${a} and ${b}`)
+        }());
+    </script>
+    <script>
+        const cheese = "yummy";
+        console.log(cheese);
+        cheese = "yucky";
+    </script>
+    <script>
+        for (let a = 0; a < 10; a++){
+            console.log(a);
+        }
+
+        console.log(a);
+    </script>
+</body>
+</html>

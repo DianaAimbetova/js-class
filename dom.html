@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        .blue {color:blue;}
+    </style>
+</head>
+<body>
+    <div id ="someid">
+    <p class = "someclass">My First Paragraph</p>
+    <p>My Second Paragraph</p>
+    <p class = "someclass">My Third Paragraph</p>
+    </div>
+    <script>
+        var allParagraphs = document.getElementsByTagName('p');
+        for (var paragraph of allParagraphs) {
+            console.log(paragraph.textContent);
+        }
+    </script>
+    <script>
+            //    for (elem of document.querySelectorAll('#someid .someclass')){
+            //     elem.style.color = 'red';
+            //    }
+    </script>
+    <script>
+        // var myDiv = document.querySelector("#someid").innerHTML = "<p> New paragraph added by innerHTML JS </p>"
+    </script>
+    <script>
+            document.querySelector("p").className = "blue";
+    </script>
+    <form>
+        <label>
+            <input type="checkbox"> YES! </input>
+        </label>
+    </form>
+    <script>
+        document.querySelector("input").setAttribute("checked", "checked");
+    </script>
+    <script>
+        document.querySelector("#someid").appendChild(document.createElement("p").appendChild(document.createTextNode("This is my fourth paragraph!!!")));
+        document.querySelector("#someid").removeChild(document.querySelector("#someid").children[1])
+        alert("Second paragraph has been removed! :(")
+    </script>
+</body>
+</html>

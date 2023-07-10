@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Events</title>
+</head>
+<body>
+   <h1> JS Events </h1>
+   <button>Do not press me!</button> 
+   <a href="https://google.com"> google </a>
+
+</body>
+<script>
+    function ouch(){
+        alert("I told  you not press me!");
+    }
+    
+    document.querySelector("button").addEventListener('click', function(event){
+        event.target.style.backgroundColor = 'red';
+        alert("I told  you not press me!");
+    });
+</script>
+<script>
+    var link = document.querySelector("a");
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        alert("Sorry no google for you!")
+    })
+</script>
+<div>
+    <form method="get">
+        <label><input type="text" name="name"></input></label>
+        <input type="submit"/>
+    </form>
+</div>
+<script>
+    document.querySelector("form").addEventListener('submit', function(event){
+        event.preventDefault();
+        var formData = document.querySelector("input").value;
+        alert(formData);
+    })
+</script>
+</html>
